@@ -1,11 +1,24 @@
-### --- Compilación y Binarios de Java ---
+### --- General / Sistema Operativo ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+.fuse_hidden*
+.directory
+.kotlin
+
+### --- Java: Compilación y Logs ---
 *.class
 *.log
 *.ctxt
 .mtj.tmp/
+hs_err_pid*
+replay_pid*
 
-### --- Archivos de Empaquetado ---
-# Se ignoran para evitar subir archivos pesados y duplicados
+### --- Archivos de Empaquetado (Binarios) ---
 *.jar
 *.war
 *.nar
@@ -14,16 +27,11 @@
 *.tar.gz
 *.rar
 
-# Si se Maven Wrapper, se puede descomentar la siguiente línea para permitir su JAR:
-# !.mvn/wrapper/maven-wrapper.jar
-
-### --- Logs de Fallos de la JVM (Java Virtual Machine) ---
-hs_err_pid*
-replay_pid*
-
 ### --- Maven ---
-# Carpeta de salida de compilación de Maven (Crítico)
 target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -32,29 +40,31 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+.mvn/
 
 ### --- IntelliJ IDEA ---
-# Configuraciones locales de la IDE y del espacio de trabajo
 .idea/
+out/
+gen/
 *.iml
 *.iws
 *.ipr
-out/
-gen/
 .idea_modules/
 
-### --- Archivos Temporales del Sistema Operativo ---
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Linux
-*~
-.fuse_hidden*
-.directory
+### --- Otros IDEs (Eclipse, NetBeans, VS Code) ---
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+.vscode/
