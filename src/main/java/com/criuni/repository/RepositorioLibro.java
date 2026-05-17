@@ -6,18 +6,8 @@ import com.criuni.model.Libro;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RepositorioLibro {
-    private Map<String, Libro> stockLibros;
-
+public class RepositorioLibro extends RepositorioBase<String, Libro>{
     public RepositorioLibro() {
-        stockLibros = new HashMap<>();
-    }
-
-    public void agregarLibro(Libro libro){
-        stockLibros.put(libro.getIsbn(), libro);
-    }
-
-    public Map<String, Libro> obtenerTodos(){
-        return stockLibros;
+        modelMap = new HashMap<>();
     }
 }

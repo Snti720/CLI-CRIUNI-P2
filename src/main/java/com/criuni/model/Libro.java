@@ -1,6 +1,6 @@
 package com.criuni.model;
 
-public class Libro {
+public class Libro implements IModelo<String> {
     private String titulo;
     private String autor;
     private String editorial;
@@ -57,7 +57,25 @@ public class Libro {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    private void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    @Override
+    public String getClave() {
+        return getIsbn();
+    }
+
+    @Override
+    public String toString() {
+        return titulo + " por " + autor + " (Stock: " + cantidad + ")";
+    }
+
+    public void agregarLibros(int cantidad){
+        setCantidad(getCantidad() + cantidad);
+    }
+
+    public void restarLibros(int cantidad){
+        setCantidad(getCantidad()-cantidad);
     }
 }

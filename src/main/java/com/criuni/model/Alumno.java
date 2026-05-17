@@ -2,21 +2,20 @@ package com.criuni.model;
 
 import java.time.LocalDate;
 
-public class Alumno {
+public class Alumno implements IModelo<Integer> {
     private String nombreCompleto;
-    final private String ci;
+    final private int ci;
     private String email;
-    private String telefono;
+    private int telefono;
     private LocalDate fechaNacimiento;
     private String facultad;
     private boolean activo;
 
-    public Alumno(String nombreCompleto, String ci, String email, String telefono, LocalDate fechaNacimiento, String facultad) {
+    public Alumno(String nombreCompleto, int ci, String email, int telefono, String facultad) {
         this.nombreCompleto = nombreCompleto;
         this.ci = ci;
         this.email = email;
         this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
         this.facultad = facultad;
         activo = true;
     }
@@ -29,7 +28,7 @@ public class Alumno {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public String getCi() {
+    public int getCi() {
         return ci;
     }
 
@@ -41,11 +40,11 @@ public class Alumno {
         this.email = email;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -53,7 +52,7 @@ public class Alumno {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento){
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -71,5 +70,15 @@ public class Alumno {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    @Override
+    public Integer getClave() {
+        return getCi();
+    }
+
+    @Override
+    public String toString() {
+        return nombreCompleto + " | " + facultad + " | " + email;
     }
 }
